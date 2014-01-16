@@ -1,6 +1,6 @@
 //Maya ASCII 2014 scene
 //Name: Enterprise.ma
-//Last modified: Thu, Jan 16, 2014 12:07:28 PM
+//Last modified: Thu, Jan 16, 2014 12:14:37 PM
 //Codeset: UTF-8
 requires maya "2014";
 currentUnit -l centimeter -a degree -t film;
@@ -12,12 +12,12 @@ fileInfo "osv" "Mac OS X 10.9.1";
 fileInfo "license" "student";
 createNode transform -s -n "persp";
 	setAttr ".v" no;
-	setAttr ".t" -type "double3" -5.7760175134004959 7.5927476587392135 9.2106034852377121 ;
-	setAttr ".r" -type "double3" -28.538352703342024 1073.8000000000193 -3.999084139036216e-16 ;
+	setAttr ".t" -type "double3" 21.664390910535005 3.2808108424163622 1.4722792670669733 ;
+	setAttr ".r" -type "double3" 368.06164729606695 1159.3999999998746 -4.3225486940327716e-15 ;
 createNode camera -s -n "perspShape" -p "persp";
 	setAttr -k off ".v" no;
 	setAttr ".fl" 34.999999999999986;
-	setAttr ".coi" 10.39244382626404;
+	setAttr ".coi" 22.719630374801419;
 	setAttr ".imn" -type "string" "persp";
 	setAttr ".den" -type "string" "persp_depth";
 	setAttr ".man" -type "string" "persp_mask";
@@ -247,7 +247,8 @@ createNode mesh -n "pasted__pCylinderShape2" -p "|group2|pasted__pCylinder2";
 	setAttr ".pt[40]" -type "float3" 0.33254588 0.21835102 0 ;
 	setAttr ".pt[41]" -type "float3" 0.0015806983 0.15793912 0 ;
 createNode transform -n "pCube3";
-	setAttr ".t" -type "double3" 2.8151539351930577 1.5320927671889755 3.3499579184654946 ;
+	setAttr ".t" -type "double3" -1.4836049171750534 2.666851719995941 -1.1912627696793909 ;
+	setAttr ".s" -type "double3" 0.088945216446955647 0.14536811834383453 0.35863381868658056 ;
 createNode mesh -n "pCubeShape3" -p "pCube3";
 	setAttr -k off ".v";
 	setAttr ".vir" yes;
@@ -257,6 +258,24 @@ createNode mesh -n "pCubeShape3" -p "pCube3";
 	setAttr ".dcc" -type "string" "Ambient+Diffuse";
 	setAttr ".covm[0]"  0 1 1;
 	setAttr ".cdvm[0]"  0 1 1;
+	setAttr -s 8 ".pt[0:7]" -type "float3"  0.029303115 0.19851974 -1.0553293 
+		-0.029303115 0.19851974 -1.0553293 0.029303115 0.14558485 -1.0553293 -0.029303115 
+		0.14558485 -1.0553293 0.029303115 0.14558485 1.0553293 -0.029303115 0.14558485 1.0553293 
+		0.029303115 0.19851974 1.0553293 -0.029303115 0.19851974 1.0553293;
+createNode transform -n "pCylinder3";
+	setAttr ".t" -type "double3" -0.37780929269422181 1.5118397826498187 -1.1375934962079597 ;
+	setAttr ".r" -type "double3" 0 0 -89.777803468210962 ;
+	setAttr ".s" -type "double3" 0.60467976204945251 1 1 ;
+createNode mesh -n "pCylinderShape3" -p "pCylinder3";
+	setAttr -k off ".v";
+	setAttr ".vir" yes;
+	setAttr ".vif" yes;
+	setAttr ".uvst[0].uvsn" -type "string" "map1";
+	setAttr ".cuvs" -type "string" "map1";
+	setAttr ".dcc" -type "string" "Ambient+Diffuse";
+	setAttr ".covm[0]"  0 1 1;
+	setAttr ".cdvm[0]"  0 1 1;
+	setAttr ".pt[41]" -type "float3"  -0.004552932 -0.70990425 0;
 createNode lightLinker -s -n "lightLinker1";
 	setAttr -s 2 ".lnk";
 	setAttr -s 2 ".slnk";
@@ -366,13 +385,18 @@ createNode polyCylinder -n "pasted__polyCylinder3";
 	setAttr ".cuv" 3;
 createNode polyCube -n "polyCube3";
 	setAttr ".cuv" 4;
+createNode polyCylinder -n "polyCylinder3";
+	setAttr ".r" 0.86260062425570783;
+	setAttr ".h" 0.097151234833677436;
+	setAttr ".sc" 1;
+	setAttr ".cuv" 3;
 select -ne :time1;
 	setAttr ".o" 1;
 	setAttr ".unw" 1;
 select -ne :renderPartition;
 	setAttr -s 2 ".st";
 select -ne :initialShadingGroup;
-	setAttr -s 8 ".dsm";
+	setAttr -s 9 ".dsm";
 	setAttr ".ro" yes;
 select -ne :initialParticleSE;
 	setAttr ".ro" yes;
@@ -404,6 +428,7 @@ connectAttr "pasted__polyCylinder2.out" "|group1|pasted__pCylinder2|pasted__pCyl
 connectAttr "pasted__polyCylinder3.out" "|group2|pasted__pCylinder2|pasted__pCylinderShape2.i"
 		;
 connectAttr "polyCube3.out" "pCubeShape3.i";
+connectAttr "polyCylinder3.out" "pCylinderShape3.i";
 relationship "link" ":lightLinker1" ":initialShadingGroup.message" ":defaultLightSet.message";
 relationship "link" ":lightLinker1" ":initialParticleSE.message" ":defaultLightSet.message";
 relationship "shadowLink" ":lightLinker1" ":initialShadingGroup.message" ":defaultLightSet.message";
@@ -420,5 +445,6 @@ connectAttr "|group1|pasted__pCylinder2|pasted__pCylinderShape2.iog" ":initialSh
 connectAttr "|group2|pasted__pCylinder2|pasted__pCylinderShape2.iog" ":initialShadingGroup.dsm"
 		 -na;
 connectAttr "pCubeShape3.iog" ":initialShadingGroup.dsm" -na;
+connectAttr "pCylinderShape3.iog" ":initialShadingGroup.dsm" -na;
 connectAttr "defaultRenderLayer.msg" ":defaultRenderingList1.r" -na;
 // End of Enterprise.ma
