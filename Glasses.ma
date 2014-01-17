@@ -1,6 +1,6 @@
 //Maya ASCII 2014 scene
 //Name: Glasses.ma
-//Last modified: Thu, Jan 16, 2014 09:28:48 PM
+//Last modified: Thu, Jan 16, 2014 09:30:07 PM
 //Codeset: UTF-8
 requires maya "2014";
 currentUnit -l centimeter -a degree -t film;
@@ -12,12 +12,12 @@ fileInfo "osv" "Mac OS X 10.9.1";
 fileInfo "license" "student";
 createNode transform -s -n "persp";
 	setAttr ".v" no;
-	setAttr ".t" -type "double3" -3.326521528007115 13.719934171366251 -19.551549330181221 ;
-	setAttr ".r" -type "double3" -38.138352729523746 166.59999999995784 0 ;
+	setAttr ".t" -type "double3" 13.487193866267194 16.818452876941947 18.052708691350002 ;
+	setAttr ".r" -type "double3" -32.138352729509123 404.19999999989597 -2.2182365887160419e-15 ;
 createNode camera -s -n "perspShape" -p "persp";
 	setAttr -k off ".v" no;
 	setAttr ".fl" 34.999999999999986;
-	setAttr ".coi" 21.362823039400133;
+	setAttr ".coi" 33.791143491020605;
 	setAttr ".imn" -type "string" "persp";
 	setAttr ".den" -type "string" "persp_depth";
 	setAttr ".man" -type "string" "persp_mask";
@@ -69,7 +69,7 @@ createNode transform -n "group";
 createNode transform -n "pasted__pCube1" -p "group";
 	setAttr ".t" -type "double3" -1.3208982861877736 1.5607089380149897 0.50059808076361734 ;
 	setAttr ".r" -type "double3" -89.010524742663236 0 179.44266044174768 ;
-	setAttr ".s" -type "double3" 0.97676635255979316 0.20923813294802146 0.74272451269068851 ;
+	setAttr ".s" -type "double3" 0.97676635255979316 0.081488617124187757 0.74272451269068851 ;
 createNode mesh -n "pasted__pCubeShape1" -p "pasted__pCube1";
 	setAttr -k off ".v";
 	setAttr ".vir" yes;
@@ -93,9 +93,9 @@ createNode transform -n "pasted__group" -p "group1";
 	setAttr ".rp" -type "double3" -2.9497878387029761 0.56833694097889831 -0.45373756854262831 ;
 	setAttr ".sp" -type "double3" -2.9497878387029761 0.56833694097889831 -0.45373756854262831 ;
 createNode transform -n "pasted__pasted__pCube1" -p "pasted__group";
-	setAttr ".t" -type "double3" -5.6289572409946782 1.5607089380149897 0.50059808076361723 ;
+	setAttr ".t" -type "double3" -5.5378861450159498 1.5607089380149897 0.50059808076361723 ;
 	setAttr ".r" -type "double3" 88.697588411375122 0 0 ;
-	setAttr ".s" -type "double3" 1 0.20923813294802146 0.74272451269068851 ;
+	setAttr ".s" -type "double3" 1 0.10181152094624624 0.74272451269068851 ;
 createNode mesh -n "pasted__pasted__pCubeShape1" -p "pasted__pasted__pCube1";
 	setAttr -k off ".v";
 	setAttr ".vir" yes;
@@ -140,7 +140,7 @@ createNode camera -n "leftShape" -p "left";
 	setAttr ".hc" -type "string" "viewSet -ls %camera";
 	setAttr ".o" yes;
 createNode transform -n "polySurface2";
-	setAttr ".t" -type "double3" -10.168962782251883 5.5677870187509786 4.3368086899420177e-19 ;
+	setAttr ".t" -type "double3" -6.8870832243215307 6.3517723143181231 -0.56719081524541615 ;
 	setAttr ".r" -type "double3" 0.59144596808626071 0 -94.751040733337703 ;
 	setAttr ".s" -type "double3" 0.90003292769562471 1 1 ;
 createNode mesh -n "polySurfaceShape2" -p "polySurface2";
