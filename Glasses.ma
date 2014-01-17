@@ -1,6 +1,6 @@
 //Maya ASCII 2014 scene
 //Name: Glasses.ma
-//Last modified: Thu, Jan 16, 2014 09:26:20 PM
+//Last modified: Thu, Jan 16, 2014 09:28:48 PM
 //Codeset: UTF-8
 requires maya "2014";
 currentUnit -l centimeter -a degree -t film;
@@ -12,12 +12,12 @@ fileInfo "osv" "Mac OS X 10.9.1";
 fileInfo "license" "student";
 createNode transform -s -n "persp";
 	setAttr ".v" no;
-	setAttr ".t" -type "double3" 2.2495397152412373 23.965468903865681 -0.36269694529917751 ;
-	setAttr ".r" -type "double3" -81.938352729492294 89.399999999993611 0 ;
+	setAttr ".t" -type "double3" -3.326521528007115 13.719934171366251 -19.551549330181221 ;
+	setAttr ".r" -type "double3" -38.138352729523746 166.59999999995784 0 ;
 createNode camera -s -n "perspShape" -p "persp";
 	setAttr -k off ".v" no;
 	setAttr ".fl" 34.999999999999986;
-	setAttr ".coi" 21.015820408262826;
+	setAttr ".coi" 21.362823039400133;
 	setAttr ".imn" -type "string" "persp";
 	setAttr ".den" -type "string" "persp_depth";
 	setAttr ".man" -type "string" "persp_mask";
@@ -140,7 +140,26 @@ createNode camera -n "leftShape" -p "left";
 	setAttr ".hc" -type "string" "viewSet -ls %camera";
 	setAttr ".o" yes;
 createNode transform -n "polySurface2";
+	setAttr ".t" -type "double3" -10.168962782251883 5.5677870187509786 4.3368086899420177e-19 ;
+	setAttr ".r" -type "double3" 0.59144596808626071 0 -94.751040733337703 ;
+	setAttr ".s" -type "double3" 0.90003292769562471 1 1 ;
 createNode mesh -n "polySurfaceShape2" -p "polySurface2";
+	setAttr -k off ".v";
+	setAttr ".vir" yes;
+	setAttr ".vif" yes;
+	setAttr ".uvst[0].uvsn" -type "string" "map1";
+	setAttr ".cuvs" -type "string" "map1";
+	setAttr ".dcc" -type "string" "Ambient+Diffuse";
+	setAttr ".covm[0]"  0 1 1;
+	setAttr ".cdvm[0]"  0 1 1;
+createNode transform -n "group2";
+	setAttr ".rp" -type "double3" 4.0983005233654151 -0.091155484318733215 -2.2898282408714294 ;
+	setAttr ".sp" -type "double3" 4.0983005233654151 -0.091155484318733215 -2.2898282408714294 ;
+createNode transform -n "pasted__polySurface2" -p "group2";
+	setAttr ".t" -type "double3" 0.48948138806829267 6.400358800138819 -0.53609818313140301 ;
+	setAttr ".r" -type "double3" -0.078496977384255956 0.17321793860599285 -91.400932855330893 ;
+	setAttr ".s" -type "double3" 0.90003292769562471 1 1 ;
+createNode mesh -n "pasted__polySurfaceShape2" -p "pasted__polySurface2";
 	setAttr -k off ".v";
 	setAttr ".vir" yes;
 	setAttr ".vif" yes;
@@ -313,13 +332,41 @@ createNode script -n "uiConfigurationScriptNode";
 createNode script -n "sceneConfigurationScriptNode";
 	setAttr ".b" -type "string" "playbackOptions -min 1 -max 24 -ast 1 -aet 48 ";
 	setAttr ".st" 6;
+createNode polyExtrudeFace -n "polyExtrudeFace2";
+	setAttr ".ics" -type "componentList" 1 "f[0]";
+	setAttr ".ix" -type "matrix" 0.90003292769562471 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1;
+	setAttr ".ws" yes;
+	setAttr ".pvt" -type "float3" 4.0983005 0 -2.2898283 ;
+	setAttr ".rs" 631472951;
+	setAttr ".lt" -type "double3" -8.8817841970012523e-16 4.0360804780705974e-16 0.18231094629239242 ;
+	setAttr ".c[0]"  0 1 1;
+	setAttr ".cbn" -type "double3" 3.6501127492381915 0 -5.5343093872070312 ;
+	setAttr ".cbx" -type "double3" 4.5464878683234957 0 0.95465290546417236 ;
+createNode polyExtrudeFace -n "pasted__polyExtrudeFace2";
+	setAttr ".ics" -type "componentList" 1 "f[0]";
+	setAttr ".ix" -type "matrix" 0.90003292769562471 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1;
+	setAttr ".ws" yes;
+	setAttr ".pvt" -type "float3" 4.0983005 0 -2.2898283 ;
+	setAttr ".rs" 631472951;
+	setAttr ".lt" -type "double3" -8.8817841970012523e-16 4.0360804780705974e-16 0.18231094629239242 ;
+	setAttr ".c[0]"  0 1 1;
+	setAttr ".cbn" -type "double3" 3.6501127492381915 0 -5.5343093872070312 ;
+	setAttr ".cbx" -type "double3" 4.5464878683234957 0 0.95465290546417236 ;
+createNode polyCreateFace -n "pasted__polyCreateFace2";
+	setAttr -s 15 ".v[0:14]" -type "float3"  4.069922 0 0.95373285 4.0555325 
+		0 -4.6084085 4.1803966 0 -4.974587 4.3523183 0 -5.2395802 4.5710077 0 -5.4034643 
+		4.764607 0 -5.5186954 4.9806828 0 -5.5343094 5.0514684 0 -5.4330182 5.0262499 0 -5.3111143 
+		4.8569884 0 -5.1702733 4.7116718 0 -5.052844 4.565588 0 -4.8859215 4.466939 0 -4.6676235 
+		4.3600969 0 0.92985547 4.4080606 0 0.95465291;
+	setAttr ".l[0]"  15;
+	setAttr ".tx" 1;
 select -ne :time1;
 	setAttr ".o" 1;
 	setAttr ".unw" 1;
 select -ne :renderPartition;
 	setAttr -s 2 ".st";
 select -ne :initialShadingGroup;
-	setAttr -s 4 ".dsm";
+	setAttr -s 5 ".dsm";
 	setAttr ".ro" yes;
 select -ne :initialParticleSE;
 	setAttr ".ro" yes;
@@ -344,7 +391,8 @@ select -ne :defaultHardwareRenderGlobals;
 connectAttr "polySplitRing3.out" "pasted__pCubeShape1.i";
 connectAttr "pasted__polySplitRing3.out" "pasted__pasted__pCubeShape1.i";
 connectAttr "polyExtrudeFace1.out" "polySurfaceShape1.i";
-connectAttr "polyCreateFace2.out" "polySurfaceShape2.i";
+connectAttr "polyExtrudeFace2.out" "polySurfaceShape2.i";
+connectAttr "pasted__polyExtrudeFace2.out" "pasted__polySurfaceShape2.i";
 relationship "link" ":lightLinker1" ":initialShadingGroup.message" ":defaultLightSet.message";
 relationship "link" ":lightLinker1" ":initialParticleSE.message" ":defaultLightSet.message";
 relationship "shadowLink" ":lightLinker1" ":initialShadingGroup.message" ":defaultLightSet.message";
@@ -365,9 +413,14 @@ connectAttr "pasted__pasted__polyCube1.out" "pasted__polySplitRing1.ip";
 connectAttr "pasted__pasted__pCubeShape1.wm" "pasted__polySplitRing1.mp";
 connectAttr "polyCreateFace1.out" "polyExtrudeFace1.ip";
 connectAttr "polySurfaceShape1.wm" "polyExtrudeFace1.mp";
+connectAttr "polyCreateFace2.out" "polyExtrudeFace2.ip";
+connectAttr "polySurfaceShape2.wm" "polyExtrudeFace2.mp";
+connectAttr "pasted__polyCreateFace2.out" "pasted__polyExtrudeFace2.ip";
+connectAttr "pasted__polySurfaceShape2.wm" "pasted__polyExtrudeFace2.mp";
 connectAttr "pasted__pCubeShape1.iog" ":initialShadingGroup.dsm" -na;
 connectAttr "pasted__pasted__pCubeShape1.iog" ":initialShadingGroup.dsm" -na;
 connectAttr "polySurfaceShape1.iog" ":initialShadingGroup.dsm" -na;
 connectAttr "polySurfaceShape2.iog" ":initialShadingGroup.dsm" -na;
+connectAttr "pasted__polySurfaceShape2.iog" ":initialShadingGroup.dsm" -na;
 connectAttr "defaultRenderLayer.msg" ":defaultRenderingList1.r" -na;
 // End of Glasses.ma
