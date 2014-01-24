@@ -1,6 +1,6 @@
 //Maya ASCII 2014 scene
 //Name: Enterprise Hero.ma
-//Last modified: Thu, Jan 23, 2014 10:13:18 AM
+//Last modified: Thu, Jan 23, 2014 10:14:06 AM
 //Codeset: UTF-8
 requires maya "2014";
 requires -nodeType "mentalrayFramebuffer" -nodeType "mentalrayOutputPass" -nodeType "mentalrayRenderPass"
@@ -90,8 +90,8 @@ fileInfo "osv" "Mac OS X 10.9.1";
 fileInfo "license" "student";
 createNode transform -s -n "persp";
 	setAttr ".v" no;
-	setAttr ".t" -type "double3" 2.7391881158735805 9.3403791308131829 -83.875299035694525 ;
-	setAttr ".r" -type "double3" 350.66164726591705 538.20000000054267 0 ;
+	setAttr ".t" -type "double3" -57.992260888260084 61.636272252777388 0.65366697644402905 ;
+	setAttr ".r" -type "double3" 311.06164726590936 627.40000000051418 -7.6333312355124402e-14 ;
 createNode camera -s -n "perspShape" -p "persp";
 	setAttr -k off ".v" no;
 	setAttr ".fl" 34.999999999999986;
