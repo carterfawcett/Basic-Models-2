@@ -1,6 +1,6 @@
 //Maya ASCII 2014 scene
 //Name: Bird of Prey.ma
-//Last modified: Fri, Jan 24, 2014 09:43:18 AM
+//Last modified: Fri, Jan 24, 2014 09:48:20 AM
 //Codeset: UTF-8
 requires maya "2014";
 requires -nodeType "mentalrayFramebuffer" -nodeType "mentalrayOutputPass" -nodeType "mentalrayRenderPass"
@@ -90,12 +90,12 @@ fileInfo "osv" "Mac OS X 10.9.1";
 fileInfo "license" "student";
 createNode transform -s -n "persp";
 	setAttr ".v" no;
-	setAttr ".t" -type "double3" 19.382118847184568 11.097219128598471 -21.984698388511919 ;
-	setAttr ".r" -type "double3" 1059.261647263017 2658.5999999994619 0 ;
+	setAttr ".t" -type "double3" 8.5955976405882293 21.898758461222478 16.582588871525918 ;
+	setAttr ".r" -type "double3" 1030.4616472709672 3267.3999999997845 0 ;
 createNode camera -s -n "perspShape" -p "persp";
 	setAttr -k off ".v" no;
 	setAttr ".fl" 34.999999999999986;
-	setAttr ".coi" 31.33914112780063;
+	setAttr ".coi" 28.782323996228289;
 	setAttr ".imn" -type "string" "persp";
 	setAttr ".den" -type "string" "persp_depth";
 	setAttr ".man" -type "string" "persp_mask";
@@ -341,7 +341,8 @@ createNode mesh -n "pasted__pCylinderShape2" -p "pasted__pCylinder2";
 	setAttr ".covm[0]"  0 1 1;
 	setAttr ".cdvm[0]"  0 1 1;
 createNode transform -n "pCube3";
-	setAttr ".t" -type "double3" 0.20043982036839569 6.41009859516147 6.9609949777184008 ;
+	setAttr ".t" -type "double3" 0.20043982036839569 6.4100985951614691 3.5981299198284686 ;
+	setAttr ".s" -type "double3" 1.0680262023040108 1.23609683271601 0.62793347004722866 ;
 createNode mesh -n "pCubeShape3" -p "pCube3";
 	setAttr -k off ".v";
 	setAttr ".vir" yes;
@@ -351,38 +352,22 @@ createNode mesh -n "pCubeShape3" -p "pCube3";
 	setAttr ".dcc" -type "string" "Ambient+Diffuse";
 	setAttr ".covm[0]"  0 1 1;
 	setAttr ".cdvm[0]"  0 1 1;
-	setAttr -s 31 ".pt";
-	setAttr ".pt[0]" -type "float3" 0.44781217 0.27713445 -0.080740288 ;
-	setAttr ".pt[1]" -type "float3" -0.44781217 0.27713445 -0.080740288 ;
-	setAttr ".pt[2]" -type "float3" 0.44781217 -0.27713445 -0.080740288 ;
-	setAttr ".pt[3]" -type "float3" -0.44781217 -0.27713445 -0.080740288 ;
-	setAttr ".pt[10]" -type "float3" -0.23320377 0.3810252 -0.080740288 ;
-	setAttr ".pt[11]" -type "float3" -0.23320377 -0.3810252 -0.080740288 ;
-	setAttr ".pt[12]" -type "float3" 0 0 -0.031340048 ;
-	setAttr ".pt[14]" -type "float3" -0.0088221235 0.43253055 -0.080740288 ;
-	setAttr ".pt[15]" -type "float3" -0.0088221235 -0.43253055 -0.080740288 ;
-	setAttr ".pt[16]" -type "float3" 0 0 -0.031340048 ;
-	setAttr ".pt[18]" -type "float3" 0.2385722 0.39157814 -0.080740288 ;
-	setAttr ".pt[19]" -type "float3" 0.2385722 -0.39157814 -0.080740288 ;
-	setAttr ".pt[20]" -type "float3" -0.277273 -0.083495483 -0.041926444 ;
-	setAttr ".pt[21]" -type "float3" -0.23320377 -0.11479584 0.55453271 ;
-	setAttr ".pt[22]" -type "float3" -0.0088221235 -0.13031355 0.55453271 ;
-	setAttr ".pt[23]" -type "float3" 0.2385722 -0.11797526 0.55453271 ;
-	setAttr ".pt[24]" -type "float3" 0.277273 -0.083495483 -0.059746686 ;
-	setAttr ".pt[25]" -type "float3" -0.27383527 0 0 ;
-	setAttr ".pt[26]" -type "float3" 0 0 1.1920929e-07 ;
-	setAttr ".pt[27]" -type "float3" 0 0 1.1920929e-07 ;
-	setAttr ".pt[29]" -type "float3" 0.27383527 0 0 ;
-	setAttr ".pt[30]" -type "float3" -0.29607287 0.12305614 -0.030822607 ;
-	setAttr ".pt[31]" -type "float3" -0.23327318 0.2256896 0.70474082 ;
-	setAttr ".pt[32]" -type "float3" -0.0058327909 0.26265135 0.70474082 ;
-	setAttr ".pt[33]" -type "float3" 0.23655775 0.24445176 0.70474082 ;
-	setAttr ".pt[34]" -type "float3" 0.29607287 0.12305614 -0.056188166 ;
-	setAttr ".pt[35]" -type "float3" -0.24364817 0 0.00058567524 ;
-	setAttr ".pt[36]" -type "float3" -0.12980367 0 0.00058567524 ;
-	setAttr ".pt[37]" -type "float3" 0.0047999923 0 0.00058567524 ;
-	setAttr ".pt[38]" -type "float3" 0.12688284 0 0.00058567524 ;
-	setAttr ".pt[39]" -type "float3" 0.24364817 0 0.00058567524 ;
+	setAttr -s 40 ".pt[0:39]" -type "float3"  0.44781217 0.27713445 -0.080740288 
+		-0.44781217 0.27713445 -0.080740288 0.44781217 -0.27713445 -0.080740288 -0.44781217 
+		-0.27713445 -0.080740288 0.48901001 -0.22003087 0 -0.48901001 -0.22003087 0 0.48901001 
+		0.22003087 0 -0.48901001 0.22003087 0 -0.25465807 -0.30251491 0 -0.25465807 0.30251491 
+		0 -0.23320377 0.3810252 -0.080740288 -0.23320377 -0.3810252 -0.080740288 -0.009633746 
+		-0.34340781 -0.031340048 -0.009633746 0.34340781 0 -0.0088221235 0.43253055 -0.080740288 
+		-0.0088221235 -0.43253055 -0.080740288 0.26052031 -0.31089354 -0.031340048 0.26052031 
+		0.31089354 0 0.2385722 0.39157814 -0.080740288 0.2385722 -0.39157814 -0.080740288 
+		-0.277273 -0.083495483 -0.041926444 -0.23320377 -0.11479584 0.55453271 -0.0088221235 
+		-0.13031355 0.55453271 0.2385722 -0.11797526 0.55453271 0.277273 -0.083495483 -0.059746686 
+		0.32797405 -0.06629125 0 0.26052031 -0.093666464 -0.65900379 -0.009633746 -0.10346244 
+		-0.65900379 -0.25465807 -0.091142185 -0.65900391 -0.32797405 -0.06629125 0 -0.29607287 
+		0.12305614 -0.030822607 -0.23327318 0.2256896 0.70474082 -0.0058327909 0.26265135 
+		0.70474082 0.23655775 0.24445176 0.70474082 0.29607287 0.12305614 -0.056188166 0.34572634 
+		0.097700424 0.00058567524 0.18418589 0.13804618 -0.65841824 -0.0068109841 0.15248354 
+		-0.65841824 -0.18004131 0.13432585 -0.65841824 -0.34572634 0.097700424 0.00058567524;
 createNode lightLinker -s -n "lightLinker1";
 	setAttr -s 11 ".lnk";
 	setAttr -s 11 ".slnk";
