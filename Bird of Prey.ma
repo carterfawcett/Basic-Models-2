@@ -1,6 +1,6 @@
 //Maya ASCII 2014 scene
 //Name: Bird of Prey.ma
-//Last modified: Thu, Jan 23, 2014 09:06:01 PM
+//Last modified: Thu, Jan 23, 2014 09:06:56 PM
 //Codeset: UTF-8
 requires maya "2014";
 requires -nodeType "mentalrayFramebuffer" -nodeType "mentalrayOutputPass" -nodeType "mentalrayRenderPass"
@@ -90,8 +90,8 @@ fileInfo "osv" "Mac OS X 10.9.1";
 fileInfo "license" "student";
 createNode transform -s -n "persp";
 	setAttr ".v" no;
-	setAttr ".t" -type "double3" -15.397388573802955 14.797554983434797 2.3286360856953765 ;
-	setAttr ".r" -type "double3" 1036.4616472633504 2438.60000000131 -2.1269584887000215e-14 ;
+	setAttr ".t" -type "double3" 0.71418116872338899 21.466888018358723 -0.36389348104107722 ;
+	setAttr ".r" -type "double3" 987.86164726343679 2457.000000001166 -7.0057736520063253e-15 ;
 createNode camera -s -n "perspShape" -p "persp";
 	setAttr -k off ".v" no;
 	setAttr ".fl" 34.999999999999986;
