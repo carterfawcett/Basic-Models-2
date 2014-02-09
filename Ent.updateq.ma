@@ -1,6 +1,6 @@
 //Maya ASCII 2014 scene
 //Name: Ent.updateq.ma
-//Last modified: Fri, Feb 07, 2014 04:21:14 PM
+//Last modified: Sat, Feb 08, 2014 10:22:01 PM
 //Codeset: UTF-8
 requires maya "2014";
 requires -nodeType "mentalrayFramebuffer" -nodeType "mentalrayOutputPass" -nodeType "mentalrayRenderPass"
@@ -90,12 +90,12 @@ fileInfo "osv" "Mac OS X 10.9.1";
 fileInfo "license" "student";
 createNode transform -s -n "persp";
 	setAttr ".v" no;
-	setAttr ".t" -type "double3" -15.601816970366279 4.4764994552756079 55.967090273069914 ;
-	setAttr ".r" -type "double3" 1440.261654361298 337.39999999992011 0 ;
+	setAttr ".t" -type "double3" 4.8607224492911509 2.8600957848023913 55.814123061135916 ;
+	setAttr ".r" -type "double3" 1442.061654361263 358.59999999991049 9.3208136514731538e-18 ;
 createNode camera -s -n "perspShape" -p "persp";
 	setAttr -k off ".v" no;
 	setAttr ".fl" 34.999999999999986;
-	setAttr ".coi" 56.558400023236857;
+	setAttr ".coi" 52.111058490468849;
 	setAttr ".imn" -type "string" "persp";
 	setAttr ".den" -type "string" "persp_depth";
 	setAttr ".man" -type "string" "persp_mask";
