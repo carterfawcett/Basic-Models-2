@@ -1,6 +1,6 @@
 //Maya ASCII 2014 scene
 //Name: BOPTempUV.ma
-//Last modified: Fri, Feb 21, 2014 12:13:13 PM
+//Last modified: Fri, Feb 21, 2014 12:15:31 PM
 //Codeset: UTF-8
 requires maya "2014";
 requires -nodeType "mentalrayFramebuffer" -nodeType "mentalrayOutputPass" -nodeType "mentalrayRenderPass"
@@ -90,12 +90,12 @@ fileInfo "osv" "Mac OS X 10.9.1";
 fileInfo "license" "student";
 createNode transform -s -n "persp";
 	setAttr ".v" no;
-	setAttr ".t" -type "double3" -8.5985791476002991 11.654869689859588 12.099376264300821 ;
-	setAttr ".r" -type "double3" 1041.8616472717588 3204.6000000001031 1.9509546221624624e-15 ;
+	setAttr ".t" -type "double3" -12.460536275280838 31.443736629756042 -1.9735550640940431 ;
+	setAttr ".r" -type "double3" 1011.8616472717517 3141.0000000000819 0 ;
 createNode camera -s -n "perspShape" -p "persp";
 	setAttr -k off ".v" no;
 	setAttr ".fl" 34.999999999999986;
-	setAttr ".coi" 18.872372845782756;
+	setAttr ".coi" 33.880207453614837;
 	setAttr ".imn" -type "string" "persp";
 	setAttr ".den" -type "string" "persp_depth";
 	setAttr ".man" -type "string" "persp_mask";
